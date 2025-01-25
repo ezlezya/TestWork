@@ -6,10 +6,12 @@ const CartModal = ({ cart, setCart, onClose, isModalOpen }) => {
         setCart(cart.filter((_, index) => index !== deny))
     }
 
+    const cartValue = cart.reduce((cur, acc) => cur + acc.price * acc.quantity, 0)
+
     return (
-        <div className={`${isModalOpen ? "" : "hidden"} fixed top-16 left-[50%] translate-x-[-50%] w-[30vw] h-[80vh] text-zinc-50 bg-gray-800 border-2 border-gray-500 flex justify-center rounded`}>
+        <div className={`${isModalOpen ? "" : "hidden"} fixed top-16 left-[50%] translate-x-[-50%] w-[30vw] min-h-[50vh] max-h-[70vh] text-zinc-50 bg-gray-800 border-2 border-gray-500 flex justify-center rounded px-5 overflow-y-auto overflow-x-hidden`}>
             <div>
-                <h2 className="text-center text-2xl my-8">Ваша корзина:</h2>
+                <h2 className="text-center text-2xl my-8">Ваша корзина: <span className="text-green-500">{cartValue}$</span></h2>
                 {cart.length === 0 ? (
                     <div className="flex gap-2 justify-center items-center">
                         <p className="text-2xl">Корзина порожня...</p>
