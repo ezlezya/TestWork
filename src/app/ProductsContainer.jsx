@@ -34,12 +34,12 @@ export default function ProductsContainer({ data }) {
 
     return (
         <>
-            <div className="container mx-auto p-4">
+            <div className="container mx-auto p-4 bg-gray-100">
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                     {filteredItems.map((product) => (
                         <div
                             key={product.id}
-                            className="relative bg-white shadow-md rounded-lg p-4 flex flex-col items-center text-center"
+                            className="relative bg-white shadow-md rounded-lg p-4 flex flex-col items-center text-center border-t-[1px] border-gra"
                         >
                             <img
                                 src={product.image}

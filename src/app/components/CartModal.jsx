@@ -8,11 +8,11 @@ const CartModal = ({ cart, setCart, onClose, isModalOpen }) => {
 
     return (
         <div className={`${isModalOpen ? "" : "hidden"} fixed top-16 left-[50%] translate-x-[-50%] w-[30vw] h-[80vh] text-zinc-50 bg-gray-800 border-2 border-gray-500 flex justify-center rounded`}>
-            <div className="">
+            <div>
                 <h2 className="text-center text-2xl my-8">Ваша корзина:</h2>
                 {cart.length === 0 ? (
                     <div className="flex gap-2 justify-center items-center">
-                        <p className="text-2xl">Корзина порожня</p>
+                        <p className="text-2xl">Корзина порожня...</p>
                         <span><Frown size={32} color="orange" /></span>
                     </div>
                 ) : (
@@ -23,7 +23,7 @@ const CartModal = ({ cart, setCart, onClose, isModalOpen }) => {
                                     {product.title} - Ціна: <span className="text-green-500">{product.price}$</span>
                                     <p className="bg-gray-100 p-[1px] text-gray-700 absolute top-[-2px] left-[0] rounded-br">{"x" + product.quantity}</p>
                                 </div>
-                                <p className="flex justify-center items-center cursor-pointer py-5 border-l-2 w-[40px]" onClick={() => handleSetCart(index)}><Trash color="red" /></p>
+                                <p className="flex justify-center items-center cursor-pointer py-5 border-l-2 w-[40px] hover:bg-gray-100 duration-300" onClick={() => handleSetCart(index)}><Trash color="red" /></p>
                             </li>
                         ))}
                     </ul>

@@ -17,17 +17,17 @@ export default function AppContainer({ data }) {
     };
 
     return (
-        <header className="bg-gray-800 px-10 py-5 text-white flex items-center justify-between">
+        <header className="bg-gray-800 px-10 py-5 text-white flex items-center justify-between shadow-xl">
             <div className="text-2xl font-semibold">
-                Назва сайту
+                Test Project
             </div>
 
             <div className="flex items-center space-x-6">
                 {/* Категорії */}
-                <div className="relative">
+                <div className="relative w-[8vw] border-[1px]">
                     <button
                         onClick={toggleCategoryMenu}
-                        className="bg-gray-700 hover:bg-gray-600 p-2 rounded-md w-56">
+                        className="bg-gray-700 hover:bg-gray-600 p-2 w-full">
                         {selectedCategory || 'Вибір категорії'}
                     </button>
                     {isCategoryOpen && (
